@@ -24,3 +24,4 @@ contract Migrations {
     }
     
 };
+
