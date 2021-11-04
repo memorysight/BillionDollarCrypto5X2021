@@ -1,13 +1,11 @@
 pragma solidity ^0.5.0;
 
-contract Tether {
-    string public name = 'Tether';
-    string public symbol = 'USDT';
+contract RWD {
+    string public name = 'Reward Token';
+    string public symbol = 'RWD';
     uint256 public totalSupply = 1000000000000000000;
     uint8 public decimals = 18;
 }
-
-
 
 //all new things below
 
@@ -27,7 +25,7 @@ event Approval {
 mapping(address => uint256) public balanceOf;
 mapping(address => (mapping(address=> uint256)) public allowance;  //new 
 
-constructor() public {
+constructor() public{
     balanceOf[msg.sender] = totalSupply;
 }
 
@@ -46,7 +44,6 @@ function approve(address _spender, uint256 _value) public returns (bool success)
 }
 
 
-
 function transferFrom(address _from, address _to, uint256 _value) public returns (bool success){
     require(_value <= balanaceOf([_from]);
     require(_value <= allowanceOf([_from][msg.sender]);
@@ -57,5 +54,4 @@ function transferFrom(address _from, address _to, uint256 _value) public returns
     emit Transfer(_from, _to, _value);
     return true;    
 }
-
 
